@@ -36,7 +36,7 @@ function handleEvent () {
 }
 
 function initPlayers () {
-    // dplayer-float
+   /* // dplayer-float
     window.dpFloat = new DPlayer({
         container: document.getElementById('dplayer-container'),
         preload: 'none',
@@ -72,19 +72,19 @@ function initPlayers () {
             api: 'https://api.prprpr.me/dplayer/',
             addition: ['https://cn-south-17-dplayer-49648867.oss.dogecdn.com/1678963.json']
         }
-    });
+    });*/
 
     // dp2
     window.dp2 = new DPlayer({
         container: document.getElementById('dplayer2'),
-        preload: 'none',
-        autoplay: false,
+        preload: 'auto',
+        autoplay: true,
         theme: '#FADFA3',
         loop: true,
-        screenshot: true,
+        //screenshot: true,
         hotkey: true,
-        logo: 'https://i.loli.net/2019/06/06/5cf8c5d94521136430.png',
-        volume: 0.2,
+        //logo: 'https://i.loli.net/2019/06/06/5cf8c5d94521136430.png',
+        //volume: 0.2,
         mutex: true,
         video: {
             url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
@@ -92,14 +92,14 @@ function initPlayers () {
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg',
             type: 'auto'
         },
-        subtitle: {
+       /* subtitle: {
             url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.vtt',
             type: 'webvtt',
             fontSize: '25px',
             bottom: '10%',
             color: '#b7daff'
-        },
-        danmaku: {
+        },*/
+      /*  danmaku: {
             id: '9E2E3368B56CDBB4',
             api: 'https://api.prprpr.me/dplayer/',
             token: 'tokendemo',
@@ -107,13 +107,13 @@ function initPlayers () {
             user: 'DIYgod',
             bottom: '15%',
             unlimited: true
-        },
-        contextmenu: [
+        },*/
+        /*contextmenu: [
             {
                 text: 'custom contextmenu',
                 link: 'https://github.com/MoePlayer/DPlayer'
             }
-        ]
+        ]*/
     });
 
     const events = [
@@ -140,6 +140,10 @@ function initPlayers () {
             eventsEle.scrollTop = eventsEle.scrollHeight;
         });
     }
+
+    document.getElementById("btn-play").addEventListener("click",function(){
+       dp2.play();
+    });
 
     // dp3
     // window.dp3 = new DPlayer({
